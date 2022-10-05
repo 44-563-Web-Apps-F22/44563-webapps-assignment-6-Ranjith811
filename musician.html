@@ -9,11 +9,11 @@
 
 <h1>Musician guess by Vungarala Ranjith</h1>
 <form>
-    <label for="form1_age">Enter the secret musician name </label>
-    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="john lennon"> <br>
+    <label for="item1_age">Enter the secret musician name </label>
+    <input type ="password" id="item1_age" name="item1_age" min=10 max=50 step=2 value="john lennon"> <br>
 
-    <label for="form1_nick">Guess the Musician</label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="item1_mus">Guess the Musician</label>
+    <input type ="text" id="item1_mus" name="item1_mus" autofocus> <br>
 
     <input type="button" onclick="checkGuess()" value="check the guess">
 </form>
@@ -28,11 +28,11 @@ wrong=0
 function checkGuess(){
 
     console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
+    age = document.getElementById("item1_age").value
+    mus = document.getElementById("item1_mus").value
     out = document.getElementById("result")
 
-    if(age==nick){
+    if(age==mus){
         correct=correct+1
         alert("you got it right")
         out.innerHTML = "correct count "+correct+", wrong count"+wrong
