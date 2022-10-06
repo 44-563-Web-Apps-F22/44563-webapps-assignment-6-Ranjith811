@@ -8,7 +8,7 @@
 <h2>Ranjith Vungarala Computes Discount</h2>
 
 <form>
-    <div class="form-group">
+    <div class="item-batch">
 
     <label for="baseamount">Enter base amount </label>
 
@@ -16,11 +16,11 @@
 
 </div>
 <br>
-<div class="form-group">
+<div class="item-batch">
 
-    <label for="discountpercentage">Enter the discount percentage </label>
+    <label for="percentagediscount">Enter the discount percentage </label>
 
-    <input type ="number" id="discountpercentage" name="discountpercentage" value=10 > 
+    <input type ="number" id="percentagediscount" name="percentagediscount" value=10 > 
 </div>
 <br>
 
@@ -37,7 +37,7 @@
 function discount (){
 
     let baseamount=document.getElementById("baseamount").value;
-    let val=document.getElementById("discountpercentage").value;
+    let val=document.getElementById("percentagediscount").value;
 
     let result="";
     for(let i=1;i<6;i++)
@@ -54,24 +54,24 @@ function discount (){
 <div class="container">
 
     <form>
-        <div class="form-group">
-        <input type="radio" id="choicetimes" name="operations" onclick="chooseOp()" value="times">
+        <div class="item-batch">
+        <input type="radio" id="choices" name="operations" onclick="chooseOp()" value="times">
         <label for="first">*</label> 
         </div>
         <br>
-        <div class="form-group">
-        <input type="radio" id="choicedivide" name="operations" onclick="chooseOp()" value="divide">
+        <div class="item-batch">
+        <input type="radio" id="divident" name="operations" onclick="chooseOp()" value="divide">
         <label for="second">/</label> 
         </div>
         <br>
-        <div class="form-group">
-        <input type="radio" id="choiceexponent" name="operations" onclick="chooseOp()" value="exponent">
+        <div class="item-batch">
+        <input type="radio" id="exponentdividend" name="operations" onclick="chooseOp()" value="exponent">
         <label for="third">**</label>
     </div>
     <br>
     </form>
 
-<p id="result1">This result will be displayed here </p>
+<p id="firstresult">This result will be displayed here </p>
 
 </div> 
 
@@ -79,27 +79,27 @@ function discount (){
 function chooseOp()
 {
    let base=document.getElementById("baseamount").value;
-   let discount=document.getElementById("discountpercentage").value;
-   let times=document.getElementById("choicetimes").checked;
-   let divide=document.getElementById("choicedivide").checked;
-   let exponent=document.getElementById("choiceexponent").checked;
+   let discount=document.getElementById("percentagediscount").value;
+   let times=document.getElementById("choices").checked;
+   let divide=document.getElementById("divident").checked;
+   let exponent=document.getElementById("exponentdividend").checked;
   
-   let result1=0;
+   let firstresult=0;
   
    if(times)
    {
-    result1=base*discount
+    firstresult=base*discount
    }
    else if(divide)
    {
-    result1=base/discount
+    firstresult=base/discount
    }
    else if(exponent)
    {
-    result1=base**discount
+    firstresult=base**discount
    }
   
-   document.getElementById("result1").innerHTML=result1;
+   document.getElementById("firstresult").innerHTML=firstresult;
 
 }
 </script>
