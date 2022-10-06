@@ -10,17 +10,17 @@
 <div class="container">
     <form>
        <div class="item-batch">
-        <input type="checkbox" id="AirTravel" name="vacationtime" value="true">
+        <input type="checkbox" id="AirVacation" name="vacationtime" value="true">
         <label for="air">Travel by Air</label></div> 
         <br>
 
         <div class="item-batch">
-        <input type="checkbox" id="domesticTravel" name="vacationtime" value="true">
+        <input type="checkbox" id="domesticVacation" name="vacationtime" value="true">
         <label for="domestic">Domestic</label> </div>
         <br>
         
         <div class="item-batch">
-        <input type="checkbox" id="resortTravel" name="vacationtime" value="false">
+        <input type="checkbox" id="VacationResort" name="vacationtime" value="false">
         <label for="resort">Resort</label> </div>
         <br>
         
@@ -32,40 +32,40 @@
     <br>
     
     <script>
-        var my_vacation={};
+        var grand_vacation={};
         function selectVacation(){
-            my_vacation={};
-            let throughair=document.getElementById("AirTravel").checked
-            let throughdomestic=document.getElementById("domesticTravel").checked
-            let throughresort=document.getElementById("resortTravel").checked
+            grand_vacation={};
+            let air=document.getElementById("AirVacation").checked
+            let domestic=document.getElementById("domesticVacation").checked
+            let resort=document.getElementById("VacationResort").checked
     
-            if(throughair)
+            if(air)
     {
-        my_vacation.AirTravel=true;
+        grand_vacation.AirVacation=true;
     }
     else
     {
-        my_vacation.AirTravel=false;
+        grand_vacation.AirVacation=false;
     }
-    if(throughdomestic)
+    if(domestic)
     {
-        my_vacation.domesticTravel=true;
-    }
-    else
-    {
-        my_vacation.domesticTravel=false;
-    }
-    if(throughresort)
-    {
-        my_vacation.resortTravel=true;
+        grand_vacation.domesticVacation=true;
     }
     else
     {
-        my_vacation.resortTravel=false;
+        grand_vacation.domesticVacation=false;
+    }
+    if(resort)
+    {
+        grand_vacation.VacationResort=true;
+    }
+    else
+    {
+        grand_vacation.VacationResort=false;
     }
     
 
-    document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
+    document.getElementById("result").innerHTML=JSON.stringify(grand_vacation)
 }
     </script>
     
@@ -77,22 +77,22 @@
         <label for="price">Enter price</label>
         <input type="text" id="price" name="vacationprice"> <br>
     
-        <input type="button" class="btn btn-success" value="Update the vacation" onclick="updateVacation()">
+        <input type="button" class="btn btn-success" value="Update the vacation" onclick="grandUpdate()">
         <p id="result">A vacation is selected and also updated</p>
     </form> 
 
 <script>
 
-    function updateVacation()
+    function grandUpdate()
 {
     let city=document.getElementById("city").value;
     let price=document.getElementById("price").value;
 
-    my_vacation["city"]=city;
+    grand_vacation["city"]=city;
 
-    my_vacation["price"]=price;
+    grand_vacation["price"]=price;
 
-    document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
+    document.getElementById("result").innerHTML=JSON.stringify(grand_vacation)
 }
 
    </script>

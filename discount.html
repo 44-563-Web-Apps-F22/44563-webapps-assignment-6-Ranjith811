@@ -55,12 +55,12 @@ function discount (){
 
     <form>
         <div class="item-batch">
-        <input type="radio" id="choices" name="operations" onclick="chooseOp()" value="times">
+        <input type="radio" id="choices" name="operations" onclick="chooseOp()" value="selection">
         <label for="first">*</label> 
         </div>
         <br>
         <div class="item-batch">
-        <input type="radio" id="divident" name="operations" onclick="chooseOp()" value="divide">
+        <input type="radio" id="divident" name="operations" onclick="chooseOp()" value="dividedby">
         <label for="second">/</label> 
         </div>
         <br>
@@ -78,25 +78,25 @@ function discount (){
 <script>
 function chooseOp()
 {
-   let base=document.getElementById("baseamount").value;
+   let baseprice=document.getElementById("baseamount").value;
    let discount=document.getElementById("percentagediscount").value;
-   let times=document.getElementById("choices").checked;
-   let divide=document.getElementById("divident").checked;
+   let selection=document.getElementById("choices").checked;
+   let dividedby=document.getElementById("divident").checked;
    let exponent=document.getElementById("exponentdividend").checked;
   
    let firstresult=0;
   
-   if(times)
+   if(selection)
    {
-    firstresult=base*discount
+    firstresult=baseprice*discount
    }
-   else if(divide)
+   else if(dividedby)
    {
-    firstresult=base/discount
+    firstresult=baseprice/discount
    }
    else if(exponent)
    {
-    firstresult=base**discount
+    firstresult=baseprice**discount
    }
   
    document.getElementById("firstresult").innerHTML=firstresult;
