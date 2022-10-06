@@ -4,40 +4,27 @@
     <title>discount</title>
     </head>
 <body>
-
 <h2>Ranjith Vungarala Computes Discount</h2>
-
 <form>
     <div class="item-batch">
-
     <label for="baseamount">Enter base amount </label>
-
     <input type ="number" id="baseamount" name="baseamount" value=20> 
-
 </div>
 <br>
 <div class="item-batch">
-
-    <label for="percentagediscount">Enter the discount percentage </label>
-
-    <input type ="number" id="percentagediscount" name="percentagediscount" value=10 > 
+    <label for="discountwithpercentage">Enter the discount percentage </label>
+    <input type ="number" id="discountwithpercentage" name="discountwithpercentage" value=10 > 
 </div>
 <br>
-
 <div>
     <input type="button" class="btn btn-danger" onclick="discount()" value="Apply discount">
 </div>
-
 </form>
-
 <p id="result">This changes will be seen here</p>
-
 <script> 
-
 function discount (){
-
     let baseamount=document.getElementById("baseamount").value;
-    let val=document.getElementById("percentagediscount").value;
+    let val=document.getElementById("discountwithpercentage").value;
 
     let result="";
     for(let i=1;i<6;i++)
@@ -45,14 +32,10 @@ function discount (){
         let discount=(baseamount*i)-((baseamount*i)*val/100);
         result=result+" "+discount;
     }
-
     document.getElementById("result").innerHTML="Discounted amounts for base "+ baseamount +" are "+result;
 }
 </script>
-
-
 <div class="container">
-
     <form>
         <div class="item-batch">
         <input type="radio" id="choices" name="operations" onclick="chooseOp()" value="selection">
@@ -70,22 +53,17 @@ function discount (){
     </div>
     <br>
     </form>
-
 <p id="firstresult">This result will be displayed here </p>
-
 </div> 
-
 <script>
 function chooseOp()
 {
-   let baseprice=document.getElementById("baseamount").value;
-   let discount=document.getElementById("percentagediscount").value;
+   let baseprice=document.getElementById("base").value;
+   let discount=document.getElementById("discount").value;
    let selection=document.getElementById("choices").checked;
    let dividedby=document.getElementById("divident").checked;
    let exponent=document.getElementById("exponentdividend").checked;
-  
    let firstresult=0;
-  
    if(selection)
    {
     firstresult=baseprice*discount
@@ -97,10 +75,8 @@ function chooseOp()
    else if(exponent)
    {
     firstresult=baseprice**discount
-   }
-  
+   } 
    document.getElementById("firstresult").innerHTML=firstresult;
-
 }
 </script>
 
